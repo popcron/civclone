@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Civclone", "Civclone.csproj", "{5FCC094E-FC3A-B27C-5867-863B42E49588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Civclone.Editor", "Civclone.Editor.csproj", "{6263A33C-49DC-E745-CB32-76A13D458A72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FCC094E-FC3A-B27C-5867-863B42E49588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FCC094E-FC3A-B27C-5867-863B42E49588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FCC094E-FC3A-B27C-5867-863B42E49588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FCC094E-FC3A-B27C-5867-863B42E49588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6263A33C-49DC-E745-CB32-76A13D458A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6263A33C-49DC-E745-CB32-76A13D458A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6263A33C-49DC-E745-CB32-76A13D458A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6263A33C-49DC-E745-CB32-76A13D458A72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+{
+    "nation": "Popcronia",
+    "map": "EarthHuge",
+    "turn": 0,
+    "width": 160,
+    "height": 80,
+    "science": 0,
+    "sciencePerTurn": 0,
+    "culture": 0,
+    "culturePerTurn": 0,
+    "faith": 0,
+    "faithPerTurn": 0,
+    "gold": 100,
+    "goldPerTurn": 0
+}

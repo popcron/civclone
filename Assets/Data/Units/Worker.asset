@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ced663fd2da58443a7e6083b69b8d62, type: 3}
+  m_Name: Worker
+  m_EditorClassIdentifier: 
+  tasks:
+  - {fileID: 11400000, guid: 02ec73a2c34d1454592ff2804c1fc78a, type: 2}
+  - {fileID: 11400000, guid: cbbc98ae39a9aae46a3c206d63a3446a, type: 2}
+  - {fileID: 11400000, guid: 2ddc920cd5ed7cb489098f6c10040d5e, type: 2}
+  - {fileID: 11400000, guid: 049a34b2a9b8a334c9f45b5ef378fdca, type: 2}
+  - {fileID: 11400000, guid: ab8e44eadd0a9024f80eb3b8323add66, type: 2}
+  - {fileID: 11400000, guid: 888c64cc9c9e9da40bb31f35513a7ee8, type: 2}
+  moves: 2
+  range: 4
+  maintenance: 1
+  costInGold: 100
+  costInProduction: 100
+  costInFaith: 100

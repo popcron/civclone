@@ -1,0 +1,6 @@
+{
+    "volume": 50.0,
+    "showWarnings": true,
+    "showErrors": true,
+    "showLogs": true
+}
