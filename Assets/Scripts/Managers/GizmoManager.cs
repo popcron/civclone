@@ -25,7 +25,7 @@ public class Gizmos
         }
     }
 
-    public static void DrawTerritory(List<WorldTile> territory, Color primaryColor, Color secondaryColor)
+    public static void DrawTerritory(List<TileObject> territory, Color primaryColor, Color secondaryColor)
     {
         for (int i = 0; i < territory.Count; i++)
         {

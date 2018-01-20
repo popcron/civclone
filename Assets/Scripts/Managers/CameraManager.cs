@@ -56,7 +56,7 @@ public class CameraManager : MonoBehaviour {
         Focus(Config.Temporary.selectedTile);
     }
 
-    public static void Focus(WorldTile tile)
+    public static void Focus(TileObject tile)
     {
         if (!instance) instance = FindObjectOfType<CameraManager>();
 

@@ -62,11 +62,11 @@ public class Nation : ScriptableObject
         }
     }
 
-    public List<WorldTile> InnerBounds
+    public List<TileObject> InnerBounds
     {
         get
         {
-            List<WorldTile> tiles = new List<WorldTile>();
+            List<TileObject> tiles = new List<TileObject>();
 
             for(int i = 0; i < WorldManager.Tiles.Length;i++)
             {
@@ -88,11 +88,11 @@ public class Nation : ScriptableObject
         }
     }
 
-    public List<WorldTile> OuterBounds
+    public List<TileObject> OuterBounds
     {
         get
         {
-            List<WorldTile> tiles = new List<WorldTile>();
+            List<TileObject> tiles = new List<TileObject>();
 
             for (int i = 0; i < WorldManager.Tiles.Length; i++)
             {

@@ -349,6 +349,8 @@
     <Compile Include="Assets\Scripts\Data\Nation.cs" />
     <Compile Include="Assets\Scripts\Data\Resource.cs" />
     <Compile Include="Assets\Scripts\Data\Task.cs" />
+    <Compile Include="Assets\Scripts\Data\Tile.cs" />
+    <Compile Include="Assets\Scripts\Data\TileOject.cs" />
     <Compile Include="Assets\Scripts\Data\Unit.cs" />
     <Compile Include="Assets\Scripts\Data\UnitObject.cs" />
     <Compile Include="Assets\Scripts\Helper\MinMax.cs" />
@@ -362,7 +364,6 @@
     <Compile Include="Assets\Scripts\Managers\WorldManager.cs" />
     <Compile Include="Assets\Scripts\World\WorldPathfinding.cs" />
     <Compile Include="Assets\Scripts\World\WorldRenderer.cs" />
-    <Compile Include="Assets\Scripts\World\WorldTile.cs" />
     <Compile Include="Assets\Scripts\World\WorldTileObject.cs" />
   </ItemGroup>
   <ItemGroup>

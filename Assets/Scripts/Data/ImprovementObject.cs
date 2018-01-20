@@ -10,12 +10,12 @@ public class ImprovementObject : MonoBehaviour
     private Improvement improvement;
 
     [SerializeField]
-    private WorldTile tile;
+    private TileObject tile;
 
     [SerializeField]
     private Nation nation;
 
-    public WorldTile Tile
+    public TileObject Tile
     {
         get
         {

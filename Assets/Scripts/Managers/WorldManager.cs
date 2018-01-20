@@ -116,7 +116,7 @@ public struct HexCoordinate
 public class WorldManager : MonoBehaviour {
 
     public static WorldManager instance;
-    private WorldTile[] tiles;
+    private TileObject[] tiles;
     private Transform tilesRoot;
 
     public List<UnitObject> units = new List<UnitObject>();
@@ -145,7 +145,7 @@ public class WorldManager : MonoBehaviour {
         }
     }
 
-    public static WorldTile[] Tiles
+    public static TileObject[] Tiles
     {
         get
         {
@@ -165,7 +165,7 @@ public class WorldManager : MonoBehaviour {
         instance = this;
     }
 
-    public static WorldTile Get(Vector3 position)
+    public static TileObject Get(Vector3 position)
     {
         HexCoordinate coordinate = HexCoordinate.FromPosition(position);
         for(int i = 0; i < instance.tiles.Length;i++)
@@ -179,7 +179,7 @@ public class WorldManager : MonoBehaviour {
         return null;
     }
 
-    public static WorldTile Get(int x, int z)
+    public static TileObject Get(int x, int z)
     {
         for (int i = 0; i < instance.tiles.Length; i++)
         {
@@ -195,11 +195,8 @@ public class WorldManager : MonoBehaviour {
     public static void Generate(MapManager.Map save)
     {
         if (!instance) instance = FindObjectOfType<WorldManager>();
-        instance.tiles = new WorldTile[save.width * save.height];
-
-        Debug.Log(save.width + ", " + save.height);
-        Debug.Log(instance.tiles.Length + ", " + save.map.Count);
-
+        instance.tiles = new TileObject[save.width * save.height];
+        
         for (int i = 0; i < save.map.Count; i++)
         {
             instance.tiles[i] = GenerateTile(save.map[i]);
@@ -211,7 +208,7 @@ public class WorldManager : MonoBehaviour {
 
         Refresh();
 
-        WorldTile tile = Tiles[Random.Range(0, Tiles.Length)];
+        TileObject tile = Tiles[Random.Range(0, Tiles.Length)];
         var settler = GameManager.PlaceUnit("Settler", tile, Config.GameSave.nation);
         GameManager.PlaceUnit("Warrior", tile.RandomNeighbour, Config.GameSave.nation);
 
@@ -224,15 +221,15 @@ public class WorldManager : MonoBehaviour {
         instance.worldRenderer.Triangulate(instance.tiles);
     }
 
-    private static WorldTile GenerateTile(MapManager.Tile tile)
+    private static TileObject GenerateTile(Tile tile)
     {
         int x = tile.x;
         int z = tile.y;
         float e = 0f;
 
-        if (tile.elevation == MapManager.Elevation.Flat) e = 0.5f;
-        else if (tile.elevation == MapManager.Elevation.Hill) e = 0.6f;
-        else if (tile.elevation == MapManager.Elevation.Mountain) e = 1f;
+        if (tile.elevation == Elevation.Flat) e = 0.5f;
+        else if (tile.elevation == Elevation.Hill) e = 0.6f;
+        else if (tile.elevation == Elevation.Mountain) e = 1f;
         if (tile.terrainType == "TERRAIN_OCEAN") e = 0f;
         if (tile.terrainType == "TERRAIN_COAST") e = 0.1f;
 
@@ -247,7 +244,7 @@ public class WorldManager : MonoBehaviour {
         float b = (float)z / Config.GameSave.height;
         float m = Mathf.PerlinNoise(a + 1, b + 1);
 
-        WorldTile worldTile = new GameObject("Tile").AddComponent<WorldTile>();
+        TileObject worldTile = new GameObject("Tile").AddComponent<TileObject>();
         worldTile.transform.SetParent(instance.tilesRoot);
         worldTile.transform.localPosition = position;
         worldTile.coordinate = HexCoordinate.FromOffsetCoordinates(x, z);
@@ -259,7 +256,7 @@ public class WorldManager : MonoBehaviour {
         if (tile.terrainType == "TERRAIN_PLAINS") worldTile.color = Color.green;
         if (tile.terrainType == "TERRAIN_DESERT") worldTile.color = Color.yellow;
         if (tile.terrainType == "TERRAIN_TUNDRA") worldTile.color = Color.gray;
-        if (tile.elevation == MapManager.Elevation.Mountain) worldTile.color *= 0.5f;
+        if (tile.elevation == Elevation.Mountain) worldTile.color *= 0.5f;
 
         return worldTile;
     }

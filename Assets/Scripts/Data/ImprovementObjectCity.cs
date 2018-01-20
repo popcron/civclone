@@ -15,7 +15,7 @@ public class ImprovementObjectCity : ImprovementObject, ITurnWaiter
     public int producingProgress;
 
     protected List<UnitObject> unitObjects = new List<UnitObject>();
-    protected List<WorldTile> territory = new List<WorldTile>();
+    protected List<TileObject> territory = new List<TileObject>();
 
     public int LevelProgressRequired
     {
@@ -25,11 +25,11 @@ public class ImprovementObjectCity : ImprovementObject, ITurnWaiter
         }
     }
 
-    public List<WorldTile> InnerBounds
+    public List<TileObject> InnerBounds
     {
         get
         {
-            List<WorldTile> tiles = new List<WorldTile>();
+            List<TileObject> tiles = new List<TileObject>();
 
             for (int i = 0; i < territory.Count; i++)
             {
@@ -51,11 +51,11 @@ public class ImprovementObjectCity : ImprovementObject, ITurnWaiter
         }
     }
 
-    public List<WorldTile> OuterBounds
+    public List<TileObject> OuterBounds
     {
         get
         {
-            List<WorldTile> tiles = new List<WorldTile>();
+            List<TileObject> tiles = new List<TileObject>();
 
             for (int i = 0; i < territory.Count; i++)
             {
@@ -126,7 +126,7 @@ public class ImprovementObjectCity : ImprovementObject, ITurnWaiter
         Claim(Tile.BottomRight);
     }
 
-    public static ImprovementObjectCity FindNearest(WorldTile tile, Nation nation)
+    public static ImprovementObjectCity FindNearest(TileObject tile, Nation nation)
     {
         var cities = nation.Cities;
         int lastCost = int.MaxValue;
@@ -152,11 +152,11 @@ public class ImprovementObjectCity : ImprovementObject, ITurnWaiter
     public void Expand()
     {
         var neighbours = Nation.OuterBounds;
-        WorldTile randomTile = neighbours[UnityEngine.Random.Range(0, neighbours.Count)];
+        TileObject randomTile = neighbours[UnityEngine.Random.Range(0, neighbours.Count)];
         Claim(randomTile);
     }
 
-    public void Claim(WorldTile tile)
+    public void Claim(TileObject tile)
     {
         if (tile)
         {
@@ -175,7 +175,7 @@ public class ImprovementObjectCity : ImprovementObject, ITurnWaiter
         }
     }
 
-    public void Unclaim(WorldTile tile)
+    public void Unclaim(TileObject tile)
     {
         if(tile)
         {

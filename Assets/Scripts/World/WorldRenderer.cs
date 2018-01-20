@@ -60,7 +60,7 @@ public class WorldRenderer : MonoBehaviour {
         }[index];
     }
 
-    public void Triangulate(WorldTile[] tiles)
+    public void Triangulate(TileObject[] tiles)
     {
         WorldMesh mesh = new WorldMesh();
         for (int i = 0; i < tiles.Length; i++)
@@ -97,7 +97,7 @@ public class WorldRenderer : MonoBehaviour {
         collider.sharedMesh = mesh.mesh;
     }
 
-    private void Triangulate(WorldMesh mesh, WorldTile tile)
+    private void Triangulate(WorldMesh mesh, TileObject tile)
     {
         Vector3 center = tile.transform.localPosition;
         for (int i = 0; i < 6; i++)

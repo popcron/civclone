@@ -1,5 +1,5 @@
 {
-    "name": "TXT_KEY_MAP_EARTH_TITLE",
+    "name": "Earth Large",
     "description": "TXT_KEY_MAP_EARTH_HELP",
     "type": 135,
     "width": 104,

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ImprovementObjectCapital : ImprovementObjectCity
 {
-    private List<WorldTile> allTerritory = new List<WorldTile>();
+    private List<TileObject> allTerritory = new List<TileObject>();
 
     protected override void Awake()
     {

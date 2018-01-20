@@ -69,11 +69,11 @@ class PriorityQueue<P, V>
 
 public static class WorldPathfinding
 {
-    public static Path<WorldTile> FindPath(WorldTile start, WorldTile destination)
+    public static Path<TileObject> FindPath(TileObject start, TileObject destination)
     {
-        var closed = new HashSet<WorldTile>();
-        var queue = new PriorityQueue<double, Path<WorldTile>>();
-        queue.Enqueue(0, new Path<WorldTile>(start));
+        var closed = new HashSet<TileObject>();
+        var queue = new PriorityQueue<double, Path<TileObject>>();
+        queue.Enqueue(0, new Path<TileObject>(start));
 
         while (!queue.IsEmpty)
         {
@@ -86,7 +86,7 @@ public static class WorldPathfinding
 
             closed.Add(path.LastStep);
 
-            foreach (WorldTile n in path.LastStep.Neighbours)
+            foreach (TileObject n in path.LastStep.Neighbours)
             {
                 if(n.passable)
                 {
@@ -101,12 +101,12 @@ public static class WorldPathfinding
         return null;
     }
 
-    private static int Distance(WorldTile a, WorldTile b)
+    private static int Distance(TileObject a, TileObject b)
     {
         return 1;
     }
 
-    private static int Estimate(WorldTile tile, WorldTile destTile)
+    private static int Estimate(TileObject tile, TileObject destTile)
     {
         float dx = Mathf.Abs(destTile.coordinate.X - tile.coordinate.X);
         float dy = Mathf.Abs(destTile.coordinate.Y - tile.coordinate.Y);

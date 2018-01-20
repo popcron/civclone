@@ -1,6 +1,6 @@
 {
     "nation": "Popcronia",
-    "map": "EarthHuge",
+    "map": "EarthTiny",
     "turn": 0,
     "width": 160,
     "height": 80,

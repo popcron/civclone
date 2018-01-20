@@ -16,7 +16,7 @@ public class CanvasLayerInGame : CanvasLayer
     public Text cityPanelName;
 
     private int selectedIndex = 0;
-    private WorldTile lastSelectedTile;
+    private TileObject lastSelectedTile;
 
     private void OnEnable()
     {

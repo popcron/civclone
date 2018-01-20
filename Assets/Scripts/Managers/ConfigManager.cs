@@ -73,7 +73,7 @@ public class Config
 [Serializable]
 public class ConfigTemporary : Config
 {
-    public WorldTile selectedTile;
+    public TileObject selectedTile;
     public UnitObject selectedUnit;
     public ImprovementObject selectedImprovement;
 }

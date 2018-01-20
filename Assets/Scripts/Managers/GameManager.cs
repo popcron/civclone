@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    private WorldTile lastTile;
-    private List<WorldTile> path;
+    private TileObject lastTile;
+    private List<TileObject> path;
 
     public static Vector3 MousePosition
     {
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
-        WorldTile tile = null;
+        TileObject tile = null;
         if (Physics.Raycast(ray, out hit))
         {
             MousePosition = hit.point + Camera.main.transform.forward * 0.1f;
@@ -238,7 +238,7 @@ public class GameManager : MonoBehaviour
         Config.GameSave.culture += Config.GameSave.culturePerTurn;
     }
 
-    public static UnitObject PlaceUnit(string name, WorldTile tile, Nation nation)
+    public static UnitObject PlaceUnit(string name, TileObject tile, Nation nation)
     {
         if (!instance) instance = FindObjectOfType<GameManager>();
 
@@ -248,7 +248,7 @@ public class GameManager : MonoBehaviour
         return unitObject;
     }
 
-    public static ImprovementObject PlaceImprovement(string name, WorldTile tile, UnitObject source)
+    public static ImprovementObject PlaceImprovement(string name, TileObject tile, UnitObject source)
     {
         if(name == "City")
         {

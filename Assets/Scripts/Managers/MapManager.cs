@@ -6,39 +6,6 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    public enum Elevation
-    {
-        Flat,
-        Hill,
-        Mountain
-    }
-
-    public enum Continent
-    {
-        Nothnig,
-        America,
-        Asia,
-        Africa,
-        Europe
-    }
-
-    [Serializable]
-    public class Tile
-    {
-        public byte x = 0;
-        public byte y = 0;
-
-        public string terrainType;
-        public string resourceType;
-        public string firstFeature;
-        public string secondFeature;
-        public byte riverIndicator = 0;
-        public Elevation elevation = Elevation.Flat;
-        public Continent continent = Continent.Nothnig;
-
-        public byte unknown;
-    }
-
     [Serializable]
     public class Map
     {
@@ -52,6 +19,7 @@ public class MapManager : MonoBehaviour
         public List<Tile> map;
     }
 
+    [SerializeField]
     private Map map;
     private static int byteIndex = 0;
     private static byte[] data;
@@ -175,8 +143,8 @@ public class MapManager : MonoBehaviour
 
                 Tile tile = new Tile
                 {
-                    x = (byte)x,
-                    y = (byte)y,
+                    x = x,
+                    y = y,
                     terrainType = terrainTypes[terrainIndex],
                     resourceType = resourceIndex != 255 ? resourceTypes[resourceIndex] : "",
                     firstFeature = firstIndex != 255 ? firstFeatures[firstIndex] : "",
@@ -186,6 +154,7 @@ public class MapManager : MonoBehaviour
                     secondFeature = secondIndex != 255 ? secondFeatures[secondIndex] : "",
                     unknown = ReadByte()
                 };
+
                 map.map.Add(tile);
             }
         }

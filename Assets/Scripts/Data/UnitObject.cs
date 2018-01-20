@@ -12,7 +12,7 @@ public class UnitObject : MonoBehaviour, ITurnWaiter
     private Unit unit;
 
     [SerializeField]
-    private WorldTile tile;
+    private TileObject tile;
 
     [SerializeField]
     private int moves;
@@ -56,7 +56,7 @@ public class UnitObject : MonoBehaviour, ITurnWaiter
         }
     }
 
-    public WorldTile Tile
+    public TileObject Tile
     {
         get
         {
@@ -92,7 +92,7 @@ public class UnitObject : MonoBehaviour, ITurnWaiter
         moves = unit.moves;
     }
 
-    public void Initialize(string unit, WorldTile tile, Nation nation)
+    public void Initialize(string unit, TileObject tile, Nation nation)
     {
         this.unit = unit;
         this.nation = nation;
