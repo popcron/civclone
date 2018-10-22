@@ -3,4 +3,4 @@
 A civ5 map parser/loader
 ![Earth map][civ]
 
-[logo]: https://github.com/popcron/civclone/blob/master/civ.png "Earth map"
+[civ]: https://github.com/popcron/civclone/blob/master/civ.png "Earth map"
